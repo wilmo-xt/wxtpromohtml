@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interação com IA</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="main-screen">
+<h1>BEM VINDO(A) AO WXTPRMO</h1>
+<p>Aqui você pode interagir com um bot e realizar transcrições de áudio e vídeo.</p>
+<button id="openMenuButton">Menu</button>
+</div>
+
+<div id="menu" style="display: none;">
+<button onclick="navigateTo('bot-section')">Converse com o Bot</button>
+<button onclick="navigateTo('transcription-section')">Transcrever Áudio</button>
+<button onclick="navigateTo('video-transcription-section')">Transcrever Vídeo</button>
+<button id="supportIAButton" onclick="navigateTo('support-ia-section')">Suporte IA</button>
+<button onclick="navigateTo('main-screen')">Voltar</button>
+</div>
+
+<!-- Seção do Bot -->
+<section id="bot-section" style="display: none;">
+<h2>Converse com o Bot</h2>
+<input type="text" id="userPrompt" placeholder="Digite seu prompt...">
+<button id="sendButton">Enviar</button>
+<div id="loadingBot" class="loading-message" style="display: none;">Aguarde, processando...</div>
+<div id="responseContainer" class="highlight"></div>
+<button onclick="navigateTo('main-screen')" class="back-button">Voltar</button>
+</section>
+
+<!-- Seção de Transcrição de Áudio -->
+<section id="transcription-section" style="display: none;">
+<h2>Transcrição de Áudio</h2>
+<input type="file" id="audioFile" accept="audio/*">
+<button id="uploadButton">Upload e Transcrever</button>
+<div id="loadingAudio" class="loading-message" style="display: none;">Aguarde, processando...</div>
+<div id="transcriptionContainer" class="highlight"></div>
+<button onclick="navigateTo('main-screen')" class="back-button">Voltar</button>
+</section>
+
+<!-- Seção de Transcrição de Vídeo -->
+<section id="video-transcription-section" style="display: none;">
+<h2>Transcrição de Vídeo</h2>
+<input type="file" id="videoFile" accept="video/*">
+<button id="videoUploadButton">Upload e Transcrever</button>
+<div id="loadingVideo" class="loading-message" style="display: none;">Aguarde, processando...</div>
+<div id="videoTranscriptionContainer" class="highlight"></div>
+<button onclick="navigateTo('main-screen')" class="back-button">Voltar</button>
+</section>
+
+<!-- Seção de Suporte IA -->
+<section id="support-ia-section" style="display: none;">
+<h2>Suporte IA</h2>
+<input type="text" id="supportPrompt" placeholder="Digite seu prompt para a IA...">
+<button id="supportSendButton">Enviar</button>
+<button id="copyButton">Copiar Texto</button>
+<div id="loadingSupport" class="loading-message" style="display: none;">Aguarde, processando...</div>
+<div id="supportResponseContainer" class="highlight"></div>
+<button onclick="navigateTo('main-screen')" class="back-button">Voltar</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
